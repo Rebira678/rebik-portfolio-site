@@ -1,3 +1,8 @@
+import rezaday from "../assets/rezaday.png";
+import soilsense from "../assets/soilsense.png";
+import smart_recipe from "../assets/smart_recipe.png";
+import women from "../assets/women.png";
+import rebikfit from "../assets/rebikfit.png";
 export const projects = [
     {
         id: 1,
@@ -5,7 +10,7 @@ export const projects = [
         description: "RebikFit offers premium gym equipment designed for performance, durability, and professional results. Our collection includes benches, dumbbells, racks, and essential accessories, all engineered to help fitness enthusiasts and athletes train effectively. Whether for home or commercial gyms, RebikFit delivers quality and reliability in every product.",
         tech: ["HTML5", "CSS3", "Tailwind CSS", "JavaScript(Vanilla)"],
         category: "Frontend",
-        image: "src/assets/image.png",
+        image: rebikfit,
         live: "https://rebik-fit.vercel.app/",
         github: "https://github.com/Rebira678/Rebik_Fit"
     },
@@ -15,7 +20,7 @@ export const projects = [
         description: "Rezaday is a powerhouse of technology experts delivering cutting-edge Cloud, DevOps, and Full Stack Development services. We connect innovative companies with world-class talent to solve complex challenges and build scalable solutions",
         tech: ["HTML5", "CSS3", "Tailwind CSS", "JavaScript(Vanilla)"],
         category: "Frontend",
-        image: "src/assets/rezaday.png",
+        image: rezaday,
         live: "https://rebira678.github.io/rezaday-company-portfolio",
         github: "https://github.com/Rebira678/rezaday-company-portfolio"
     },
@@ -25,7 +30,7 @@ export const projects = [
         description: "SoilSense is a modern frontend web app that helps users monitor and analyze soil health with an interactive UI and map view. Built for hackathons and future AI integration.",
         tech: ["React.js", "Bootstrap 5", "CSS3 + Animate.css"],
         category: "Frontend",
-        image: "src/assets/soilsense.png",
+        image: soilsense,
         live: "https://soilsense-app.vercel.app/",
         github: "https://github.com/Rebira678/Soilsense-app"
     },
@@ -35,7 +40,7 @@ export const projects = [
         description: "allows users to generate personalized recipes based on the ingredients they have in their pantry. Users can also save favorites, view food news, and listen to recipe instructions via text-to-speech.",
         tech: ["HTML", "CSS", "JavaScript", "Python 3", "Flask", "SQLite"],
         category: "Fullstack",
-        image: "src/assets/smart_recipe.png",
+        image: smart_recipe,
         live: "https://smartreciperecommender-c8i8.onrender.com/",
         github: "https://github.com/Rebira678/SmartRecipeRecommender"
     },
@@ -45,7 +50,7 @@ export const projects = [
         description: "A complete platform built to empower African women through mentorship, programs, funding opportunities, education resources, success stories, and personalized dashboards. It includes secure user authentication, interactive features like booking, saving, and applying, and an admin system for managing content—all within a clean and beautifully designed user interface.",
         tech: ["React(Vite)", "Bootstrap", "Node.js", "Express.js", "MongoDB + Mongoose"],
         category: "Frontend",
-        image: "src/assets/women.png",
+        image: women,
         live: "https://women-empowerment-portal-jade.vercel.app/",
         github: "https://github.com/Rebira678/Women_empowerment_portal"
     },

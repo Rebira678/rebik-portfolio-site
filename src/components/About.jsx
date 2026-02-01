@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { User, Code2, Briefcase, Award } from 'lucide-react';
-
+import me from "../assets/me.jpg";
 const achievements = [
     { icon: Code2, title: 'Clean Code', desc: 'Maintainable, scalable, and optimized codebases.' },
     { icon: Briefcase, title: 'Experience', desc: 'Over 6+ successful projects delivered.' },
@@ -55,7 +55,7 @@ export default function About() {
                     >
                         <div className="aspect-square rounded-2xl overflow-hidden relative z-10 group">
                             <img
-                                src="src\assets\me.jpg"
+                                src={me}
                                 alt="Rebira Adugna"
                                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
                             />
