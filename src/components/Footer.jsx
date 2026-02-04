@@ -13,7 +13,7 @@ export default function Footer() {
                     className="flex items-center gap-2"
                 >
                     <span className="w-6 h-6 bg-emerald-500 rounded flex items-center justify-center text-[10px] font-bold text-white">R</span>
-                    <span className="text-xl font-display font-bold tracking-tighter">REBIRA</span>
+                    <span className="text-xl font-display font-bold tracking-tighter">REBIK</span>
                 </motion.div>
 
                 <p className="text-gray-500 text-sm">

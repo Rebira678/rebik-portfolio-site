@@ -5,15 +5,45 @@ import { useState } from 'react';
 export default function Contact() {
     const [formState, setFormState] = useState({ name: '', email: '', message: '' });
     const [isSent, setIsSent] = useState(false);
+    const [isSending, setIsSending] = useState(false);
+    const [status, setStatus] = useState(null); // 'success' | 'error' | null
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Simulate sending
-        setTimeout(() => {
-            setIsSent(true);
-            setFormState({ name: '', email: '', message: '' });
-            setTimeout(() => setIsSent(false), 5000);
-        }, 1000);
+        setIsSending(true);
+        setStatus(null);
+
+        try {
+            const formData = new URLSearchParams();
+            formData.append('name', formState.name);
+            formData.append('email', formState.email);
+            formData.append('message', formState.message);
+            formData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
+            formData.append('_subject', 'Portfolio Contact');
+            formData.append('_captcha', 'false');
+
+            const response = await fetch("https://formsubmit.co/ajax/rebikman9@gmail.com", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "Accept": "application/json"
+                },
+                body: formData
+            });
+
+            if (response.ok) {
+                setIsSent(true);
+                setFormState({ name: '', email: '', message: '' });
+                setTimeout(() => setIsSent(false), 8000);
+            } else {
+                setStatus('error');
+            }
+        } catch (error) {
+            console.error("Submission error:", error);
+            setStatus('error');
+        } finally {
+            setIsSending(false);
+        }
     };
     const socials = [
         { Icon: Github, link: "https://github.com/rebira678" },
@@ -45,7 +75,9 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <h4 className="text-gray-500 text-xs uppercase tracking-widest font-bold">Email</h4>
-                                    <p className="text-white font-medium">rebikman9@gmail.com</p>
+                                    <a href="mailto:rebikman9@gmail.com" className="text-white font-medium hover:text-emerald-500 transition-colors">
+                                        rebikman9@gmail.com
+                                    </a>
                                 </div>
                             </div>
 
@@ -99,18 +131,19 @@ export default function Contact() {
                         className="glass-card p-8 md:p-10"
                     >
                         <form
-                            action="https://formsubmit.co/rebikman9@gmail.com"
-                            method="POST"
+                            onSubmit={handleSubmit}
                             className="space-y-6">
 
-                            <input type="hidden" name="_subject" value="New message from Rebik Portfolio" />
                             <input type="hidden" name="_captcha" value="false" />
-                            <input type="hidden" name="_template" value="table" />
+                            <input type="hidden" name="_subject" value="New message from Portfolio" />
+
+
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label className="block text-gray-500 text-xs font-bold uppercase tracking-widest mb-2 ml-1">Name</label>
                                     <input
                                         type="text"
+                                        name="name"
                                         required
                                         value={formState.name}
                                         onChange={(e) => setFormState({ ...formState, name: e.target.value })}
@@ -122,6 +155,7 @@ export default function Contact() {
                                     <label className="block text-gray-500 text-xs font-bold uppercase tracking-widest mb-2 ml-1">Email</label>
                                     <input
                                         type="email"
+                                        name="email"
                                         required
                                         value={formState.email}
                                         onChange={(e) => setFormState({ ...formState, email: e.target.value })}
@@ -133,6 +167,7 @@ export default function Contact() {
                             <div>
                                 <label className="block text-gray-500 text-xs font-bold uppercase tracking-widest mb-2 ml-1">Message</label>
                                 <textarea
+                                    name="message"
                                     required
                                     rows="5"
                                     value={formState.message}
@@ -144,15 +179,28 @@ export default function Contact() {
 
                             <button
                                 type="submit"
-                                disabled={isSent}
+                                disabled={isSending || isSent}
                                 className={`w-full py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition-all ${isSent
                                     ? 'bg-emerald-500 text-white shadow-[0_0_20px_rgba(16,185,129,0.4)]'
                                     : 'bg-emerald-600 hover:bg-emerald-500 text-white'
                                     }`}
                             >
-                                {isSent ? 'Message Sent!' : 'Send Message'}
-                                {!isSent && <Send size={18} />}
+                                {isSent ? 'Message Sent!' : isSending ? 'Sending...' : 'Send Message'}
+                                {!isSending && !isSent && <Send size={18} />}
                             </button>
+
+                            {isSent && (
+                                <div className="mt-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
+                                    <p className="text-emerald-500 font-bold mb-1">Message Sent Successfully!</p>
+                                    <p className="text-emerald-400 text-sm">Thank you for reaching out. I will get back to you as soon as possible.</p>
+                                </div>
+                            )}
+
+                            {status === 'error' && (
+                                <p className="text-red-500 text-center text-sm mt-4">
+                                    Something went wrong. Please try clicking the email above to send directly.
+                                </p>
+                            )}
                         </form>
                     </motion.div>
                 </div>
