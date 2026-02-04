@@ -18,7 +18,7 @@ export default function Contact() {
             formData.append('name', formState.name);
             formData.append('email', formState.email);
             formData.append('message', formState.message);
-            formData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
+            formData.append('access_key', 'f8483346-848e-4f26-87b1-0b6dc49abf1a');
             formData.append('_subject', 'Portfolio Contact');
             formData.append('_captcha', 'false');
 
