@@ -10,6 +10,7 @@ const Projects = lazy(() => import('./components/Projects'));
 const Testimonials = lazy(() => import('./components/Testimonials'));
 const Contact = lazy(() => import('./components/Contact'));
 const Footer = lazy(() => import('./components/Footer'));
+const AiAssistant = lazy(() => import('./components/AiAssistant'));
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
 
       <Suspense fallback={null}>
         <Footer />
+        <AiAssistant />
       </Suspense>
     </div>
   );
