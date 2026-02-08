@@ -3,6 +3,7 @@ import soilsense from "../assets/soilsense.png";
 import smart_recipe from "../assets/smart_recipe.png";
 import women from "../assets/women.png";
 import rebikfit from "../assets/rebikfit.png";
+import alarm from "../assets/purpose_alarm.png";
 export const projects = [
     {
         id: 1,
@@ -55,33 +56,22 @@ export const projects = [
         github: "https://github.com/Rebira678/Women_empowerment_portal"
     },
     {
-        id: 6,
-        title: "Zenith Task Manager",
-        description: "Productivity app with drag-and-drop workflow, team collaboration, and automated reminders.",
-        tech: ["React", "Redux", "Firebase", "DragDropContext"],
-        category: "Fullstack",
-        image: "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?q=80&w=2464&auto=format&fit=crop",
-        live: "#",
-        github: "#"
-    },
-    {
-        id: 7,
-        title: "Aura Weather AI",
-        description: "Hyper-local weather forecasting using machine learning models and beautiful animated weather conditions.",
-        tech: ["React", "OpenWeather API", "GSAP"],
-        category: "Frontend",
-        image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?q=80&w=2565&auto=format&fit=crop",
-        live: "#",
-        github: "#"
-    },
-    {
-        id: 8,
-        title: "PixelForge CMS",
-        description: "Lightweight, developer-friendly content management system with real-time preview and Git-based workflow.",
-        tech: ["Next.js", "Tailwind CSS", "Prismic"],
-        category: "API",
-        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2672&auto=format&fit=crop",
-        live: "#",
-        github: "#"
-    }
+    id: 6,
+    title: "Purpose Alarm – Wake With Intention",
+    description: "A productivity-focused mobile alarm application that ensures users wake up with clarity and purpose. Instead of just ringing, each alarm is tied to a personal reason such as studying, working, or exercising. When the alarm triggers, the user’s purpose appears in large text alongside motivational UI and a forced math challenge to ensure they are fully awake. The app features a premium dark UI with gradients and glassmorphism, custom sound selection, recurring schedules, and persistent storage—helping users build disciplined morning routines and consistent habits.",
+    tech: [
+        "React Native (Expo)",
+        "TypeScript",
+        "AsyncStorage",
+        "Day.js",
+        "Lucide Icons",
+        "React Native Animated API"
+    ],
+    category: "Mobile",
+    image: alarm,
+    live: "#",
+    github: "https://github.com/Rebira678/purpose_alarm"
+}
+
+
 ];
