@@ -1,4 +1,4 @@
-import { FaReact, FaNodeJs, FaDatabase, FaDocker, FaAws, FaGitAlt } from 'react-icons/fa';
+import { FaReact, FaNodeJs,FaPython, FaDatabase, FaDocker, FaAws, FaGitAlt } from 'react-icons/fa';
 import { SiTailwindcss, SiJavascript, SiTypescript, SiMongodb, SiExpress, SiNextdotjs } from 'react-icons/si';
 import { TbBrandThreejs } from 'react-icons/tb';
 
@@ -19,6 +19,7 @@ export const skillCategories = [
         skills: [
             { name: "Node.js", icon: FaNodeJs, level: 85 },
             { name: "Express", icon: SiExpress, level: 80 },
+            { name: "Python", icon: FaPython, level: 70 },
             { name: "MongoDB", icon: SiMongodb, level: 80 },
             { name: "SQL / Postgre", icon: FaDatabase, level: 60 },
         ]
