@@ -22,16 +22,17 @@ export default function About() {
                             Crafting <span className="text-gradient">Digital Experiences</span> <br />
                             with Purpose
                         </h2>
-                        <div className="space-y-6 text-gray-400 text-lg leading-relaxed">
+                       <div className="space-y-6 text-gray-400 text-lg leading-relaxed">
                             <p>
                                 As a Full Stack Developer, I specialize in building robust and scalable web applications.
                                 My approach combines technical excellence with a deep understanding of user needs to deliver
                                 products that not only look great but also perform exceptionally.
                             </p>
                             <p>
-                                I thrive in the intersection of design and development, ensuring every pixel serves a purpose
-                                and every line of code contributes to a seamless user journey. Whether it's a startup landing page
-                                or a complex enterprise dashboard, I bring commitment and precision to every project.
+                                I thrive at the intersection of development, AI, and design, ensuring every feature is purposeful
+                                and every line of code contributes to a seamless user experience. I am also a dedicated problem solver,
+                                having tackled 450+ challenges on LeetCode and Codeforces using Python, which strengthens my
+                                ability to write efficient, logical, and maintainable code for any project.
                             </p>
                         </div>
 
