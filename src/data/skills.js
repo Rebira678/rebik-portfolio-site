@@ -10,8 +10,7 @@ export const skillCategories = [
             { name: "JavaScript", icon: SiJavascript, level: 80 },
             { name: "TypeScript", icon: SiTypescript, level: 60 },
             { name: "Tailwind CSS", icon: SiTailwindcss, level: 85 },
-            { name: "Next.js", icon: SiNextdotjs, level: 60 },
-            { name: "Three.js", icon: TbBrandThreejs, level: 45 },
+
         ]
     },
     {
